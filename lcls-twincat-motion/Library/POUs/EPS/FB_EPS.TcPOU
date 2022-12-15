@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="FB_EPS" Id="{7410028d-83c3-4e8b-951d-6752cbf47fca}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_EPS
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="setBits" Id="{e94e9a9f-d38d-46e0-b481-b427ab90196f}">
+      <Declaration><![CDATA[METHOD setBits : BOOL
+VAR_INPUT
+    eps : DUT_EPS;
+	nBits : BYTE;
+	bValue : BOOL;
+END_VAR
+VAR
+    nMask : UDINT := 1;
+	nBitValue : UDINT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[nMask := SHL(eps.nFlags, nBits);
+nBitValue := SHR(nMask AND eps.nFlags, nBits);
+
+IF (TO_BOOL(nBitValue)) <> bValue THEN
+	eps.nFlags := eps.nFlags XOR nmask;
+END_IF
+]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>
