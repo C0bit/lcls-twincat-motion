@@ -17,7 +17,7 @@
     <CombineIds>false</CombineIds>
     <Company>SLAC</Company>
     <Released>false</Released>
-    <Title>lcls-twincat-motion</Title>
+    <Title>lcls-twincat-motion-jozamudi</Title>
     <ProjectVersion>0.0.0</ProjectVersion>
     <!--    <OutputType>Exe</OutputType>
     <RootNamespace>MyApplication</RootNamespace>
@@ -34,7 +34,6 @@
     <Folder Include="POUs\Motion\States" />
     <Folder Include="POUs\ImplicitChecks" />
     <Folder Include="POUs\Deprecated" />
-    <Folder Include="POUs\EPS" />
     <Folder Include="UnitTests" />
     <Folder Include="POUs" />
     <Folder Include="POUs\Motion" />
@@ -61,9 +60,6 @@
     <Folder Include="tc_mca_std_lib\GVLs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DUTs\DUT_EPS.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="DUTs\DUT_MotionStage.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -115,9 +111,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Deprecated\FB_StatePTPMove.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\EPS\FB_EPS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\ImplicitChecks\CheckBounds.TcPOU">
@@ -392,7 +385,7 @@
   <ItemGroup>
     <PlaceholderReference Include="LCLS General">
       <DefaultResolution>LCLS General, * (SLAC)</DefaultResolution>
-      <Namespace>LCLS_General</Namespace>
+      <Namespace>LCLS_General_jozamudi</Namespace>
     </PlaceholderReference>
     <PlaceholderReference Include="PMPS">
       <DefaultResolution>PMPS, * (SLAC - LCLS)</DefaultResolution>
@@ -433,6 +426,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <PlaceholderResolution Include="LCLS General">
+      <Resolution>LCLS General-jozamudi, 0.0.0 (SLAC)</Resolution>
+    </PlaceholderResolution>
     <PlaceholderResolution Include="Tc3_JsonXml">
       <Resolution>Tc3_JsonXml, * (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
